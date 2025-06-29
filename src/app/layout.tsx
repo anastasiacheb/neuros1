@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import { Nav } from '@/components';
 
 const inter = localFont({
   src: [
@@ -107,7 +108,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${DM.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${DM.variable} antialiased`}>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }
