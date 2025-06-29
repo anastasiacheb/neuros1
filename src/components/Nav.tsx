@@ -20,7 +20,7 @@ function NavLink({ name, href }: NavLinkProps) {
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="max-w-[1440px] m-auto px-5 md:px-8 lg:px-[7.375rem]">
+    <nav className="max-w-360 m-auto px-5 md:px-8 lg:px-[7.375rem]">
       <div className="flex justify-between py-1.5 md:py-2.5 lg:py-5 border-b border-primary-300 bg-primary-0 z-50 relative">
         <div className="flex gap-10 items-center lg:py-1.5 z-50">
           <Link href="/" className="block flex-none">
