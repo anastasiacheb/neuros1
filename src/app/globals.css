@@ -74,6 +74,12 @@
   }
 }
 
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
 body {
   background: var(--primary-0);
   color: var(--primary-1000);
