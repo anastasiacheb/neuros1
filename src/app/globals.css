@@ -45,8 +45,8 @@
   --color-accent-600: var(--accent-600);
   --color-accent-700: var(--accent-700);
   --color-accent-800: var(--accent-800);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-DM: var(--font-DM);
 }
 
 @media (prefers-color-scheme: dark) {
