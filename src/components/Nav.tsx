@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { ThemeImage } from '@/components';
+import { ThemeImage, Button } from '@/components';
 import { useState } from 'react';
 
 interface NavLinkProps {
@@ -41,12 +41,8 @@ export default function Nav() {
         </div>
 
         <div className="flex gap-2 flex-none items-center">
-          <button className="font-DM font-bold border border-accent-300 text-accent-600 text-sm hover:border-accent-700 active:border-accent-900 py-3 px-5 rounded-xl items-center justify-center gap-2 max-w-max transition hidden md:flex flex-initial">
-            Get a demo
-          </button>
-          <button className="font-DM font-bold text-primary-0 bg-accent-600 hover:bg-accent-700 text-sm active:bg-accent-800 py-3 px-5 rounded-xl max-w-max transition hidden md:flex flex-initial items-center">
-            Start your free trial
-          </button>
+          <Button text="Get a demo" small blue />
+          <Button text="Start your free trial" small />
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="open or close mobile menu"

@@ -22,5 +22,5 @@ export default function ThemeImage({ srcDark, srcLight, alt, className }: ThemeI
 
   const src = isDark ? srcDark : srcLight;
 
-  return <Image src={src} alt={alt} width={0} height={0} className={className} />;
+  return <Image src={src} alt={alt} width={0} height={0} sizes="100vw" quality={100} className={className} />;
 }
