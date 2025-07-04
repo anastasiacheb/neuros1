@@ -1,4 +1,4 @@
-import { ThemeImage, Button } from '@/components';
+import { ThemeImage, Button, Slider } from '@/components';
 import React, { ReactNode } from 'react';
 
 const Logos = [
@@ -18,6 +18,14 @@ const Features = [
   {
     title: 'Navigate with Confidence through Precise Predictions',
     text: 'Embark on a journey of data-driven decision-making with Neuros, where our advanced AI algorithms meticulously analyze historical data and identify emerging patterns, ensuring each forecast is not only accurate but also reliable. Our predictive accuracy empowers your business to anticipate market trends, mitigate risks, and seize opportunities with utmost confidence.',
+    // conten: [
+    //   {
+    //     srcDark: '/images/Ilustrationdark.png',
+    //     srcLight: '/images/Ilustration.png',
+    //     className:
+    //       'absolute top-0 right-0  w-[75vw] h-[53vw] rounded-2xl md:w-[71vw] md:h-[50vw] lg:w-[30vw] lg:h-[21vw] lg:max-w-108 lg:max-h-76',
+    //   },
+    // ],
     content: (
       <>
         <ThemeImage
@@ -208,6 +216,18 @@ export default function Home() {
             />
           ))}
         </div>
+      </section>
+      <section
+        data-aos="fade-up"
+        className="py-14 px-5 max-w-360 m-auto md:pt-32 md:pb-28 md:px-14 lg:px-28 h-dvh md:h-187.5 lg:h-177.5 flex flex-col justify-between">
+        <div>
+          <h2 className="font-DM font-bold text-[2.4rem] text-center mb-4">The Neuros Experience</h2>
+          <p className="text-base text-primary-800 text-center mb-12 md:mb-20 max-w-200 m-auto">
+            At Neuros, we pride ourselves on delivering top-notch AI-driven business analytics. But don&apos;t just take
+            our word for it. Hear what our satisfied users have to say.
+          </p>
+        </div>
+        <Slider />
       </section>
     </>
   );
