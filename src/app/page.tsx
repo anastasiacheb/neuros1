@@ -148,6 +148,156 @@ function FeatureItem({ title, text, content, index }: featureItemProps) {
   );
 }
 
+const Benefits = [
+  {
+    srcLight: '/icons/credit_card_cursor_click.svg',
+    srcDark: '/icons/credit_card_cursor_clickdark.svg',
+    title: 'Instant Access',
+    text: "Begin exploring Neuros's full suite of features immediately",
+  },
+  {
+    srcLight: '/icons/chart_rates_checkmark1.svg',
+    srcDark: '/icons/chart_rates_checkmark1dark.svg',
+    title: 'No Commitments',
+    text: 'No credit card required, and you can cancel anytime',
+  },
+  {
+    srcLight: '/icons/World,_Transaction,_Transfer.svg',
+    srcDark: '/icons/World,_Transaction,_Transferdark.svg',
+    title: 'Dedicated Support',
+    text: 'Our team is here to assist you every step of the way during your trial.',
+  },
+];
+
+interface BenefitItemProps {
+  srcLight: string;
+  srcDark: string;
+  title: string;
+  text: string;
+}
+
+function BenefitItem({ srcLight, srcDark, title, text }: BenefitItemProps) {
+  return (
+    <div className="bg-gradient-to-br from-primary-0/10 to-primary-0/15 backdrop-blur-2 rounded-2xl border border-primary-0/20 p-2 flex gap-3">
+      <ThemeImage
+        srcLight={srcLight}
+        srcDark={srcDark}
+        alt="decor"
+        className="bg-primary-0/10 rounded-xl px-3 py-6 w-12 h-18"
+      />
+      <div>
+        <h3 className="font-medium text-base text-primary-0">{title}</h3>
+        <p className="text-base text-primary-0/70">{text}</p>
+      </div>
+    </div>
+  );
+}
+
+const Applications = [
+  {
+    srcLight: '/icons/server_databases_network.svg',
+    srcDark: '/icons/server_databases_networkdark.svg',
+    title: 'Predictive Power',
+    description:
+      "Harness Neuros's advanced AI algorithms to anticipate market shifts, forecast trends, and make data-driven decisions that propel your business forward.",
+    industries: ['Finance', 'Retail', 'E-commerce'],
+  },
+  {
+    srcLight: '/icons/Ticket,_Group,_Circle.svg',
+    srcDark: '/icons/Ticket,_Group,_Circledark.svg',
+    title: 'Connect with Ease',
+    description:
+      "Integrate Neuros with your existing tools and platforms for a unified analytics experience. From CRMs to ERPs, we've got you covered.",
+    industries: ['Tech', 'Healthcare', 'Manufacturing'],
+  },
+  {
+    srcLight: '/icons/Target,_Space,_Object,_Select.svg',
+    srcDark: '/icons/Target,_Space,_Object,_Selectkdark.svg',
+    title: 'Visualize Your Success',
+    description:
+      "Craft bespoke dashboards that resonate with your brand's goals. With drag-and-drop functionalities, visualizing your data has never been this easy.",
+    industries: ['Marketing', 'Sales', 'Operations'],
+  },
+  {
+    srcLight: '/icons/chart_rates_checkmark.svg',
+    srcDark: '/icons/chart_rates_checkmarkdark.svg',
+    title: 'Stay Updated, Always',
+    description:
+      "With Neuros's real-time data processing, you're always in the know. Make decisions based on the latest data and stay ahead of the curve.",
+    industries: ['E-commerce', 'Logistics', 'Supply Chain'],
+  },
+  {
+    srcLight: '/icons/server_databases_synchronize.svg',
+    srcDark: '/icons/server_databases_synchronizedark.svg',
+    title: "Your Data's Safe Haven",
+    description:
+      "Rest easy knowing your data is protected with Neuros's top-tier security protocols. From encryption to access controls, we prioritize your data's safety.",
+    industries: ['Finance', 'Healthcare', 'Legal'],
+  },
+  {
+    srcLight: '/icons/credit_card_documet_sync.svg',
+    srcDark: '/icons/credit_card_documet_syncdark.svg',
+    title: 'Collaborate and Conquer',
+    description:
+      "Work together seamlessly with Neuros's collaborative features. Share insights, annotate charts, and drive collective growth.",
+    industries: ['Design', 'Development', 'Project Management'],
+  },
+  {
+    srcLight: '/icons/credit_card_cursor_click1.svg',
+    srcDark: '/icons/credit_card_cursor_click1dark.svg',
+    title: 'Simplicity Meets Power',
+    description:
+      "Neuros offers an intuitive interface that's easy to navigate, ensuring you spend less time figuring things out and more time analyzing.",
+    industries: ['All Industries'],
+  },
+  {
+    srcLight: '/icons/hand_credit_card_movement_left.svg',
+    srcDark: '/icons/hand_credit_card_movement_leftdark.svg',
+    title: 'Let AI Do the Heavy Lifting',
+    description:
+      "Receive automated insights and recommendations tailored to your business needs. Let Neuros's AI guide your strategies.",
+    industries: ['Retail', 'Marketing', 'Sales'],
+  },
+  {
+    srcLight: '/icons/server_databases-sync.svg',
+    srcDark: '/icons/server_databases-syncdark.svg',
+    title: 'Collaborate and Conquer',
+    description:
+      "Whether you're a startup or an enterprise, Neuros scales with you. Experience robust analytics solutions that adapt to your growth.",
+    industries: ['Startups', 'SMEs', 'Enterprises'],
+  },
+];
+
+interface ApplicationCardProps {
+  title: string;
+  description: string;
+  srcLight: string;
+  srcDark: string;
+  industries: string[];
+  index: number;
+  applicationsLength: number;
+}
+
+function ApplicationCard({
+  title,
+  description,
+  srcLight,
+  srcDark,
+  industries,
+  index,
+  applicationsLength,
+}: ApplicationCardProps) {
+  return (
+    <div
+      className={`border border-primary-400 rounded-xl p-8 hover:border-accent-600 hover:shadow-blue transition ${index === applicationsLength - 1 && 'md:col-span-2 lg:col-span-1'}`}>
+      <ThemeImage srcLight={srcLight} srcDark={srcDark} alt="illustration" className="mb-4 w-8 h-8" />
+      <h3 className="font-DM font-bold text-xl mb-1">{title}</h3>
+      <p className="text-base text-primary-800 h-[78px] overflow-clip mb-4">{description}</p>
+      <p className="text-sm text-accent-600">{industries.join(', ')}</p>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -228,6 +378,54 @@ export default function Home() {
           </p>
         </div>
         <Slider />
+      </section>
+      <section data-aos="fade-up" className="max-w-360 lg:px-28 lg:mx-auto">
+        <div className="bg-accent-600 pt-8 pb-14 px-8 my-14 md:rounded-[2rem] md:p-14 md:my-20 md:mx-8 lg:max-w-301 lg:mx-auto flex flex-col gap-10 lg:flex-row relative overflow-hidden">
+          <ThemeImage
+            srcDark="/images/Mask_groupdark.png"
+            srcLight="/images/Mask_group.png"
+            alt="play"
+            className="w-full h-auto lg:h-full lg:w-auto absolute object-contain bottom-0 left-0"
+          />
+          <div className="flex-1">
+            <h2 className="font-DM font-bold text-4xl mb-10 md:text-5xl text-primary-0">
+              Revolutionizing Business Decisions with AI-Powered Analytics
+            </h2>
+            <button className="font-DM font-bold text-base text-primary-0 bg-gradient-to-br from-primary-0/10 to-primary-0/25 backdrop-blur-2 rounded-xl py-4 px-8 w-full md:w-auto flex gap-2 justify-center">
+              Start your free trial
+              <ThemeImage
+                srcLight="/icons/staricon.svg"
+                srcDark="/icons/staricondark.svg"
+                alt="decor"
+                className="w-6 h-6"
+              />
+            </button>
+          </div>
+          <div className="flex flex-col gap-5 flex-1 lg:max-w-95">
+            {Benefits.map((benefit, index) => (
+              <BenefitItem key={index} {...benefit} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section data-aos="fade-up" className="px-5 max-w-360 m-auto pt-32 pb-28 md:px-8 lg:px-28">
+        <h2 className="rounded-full border border-primary-400 flex py-2 px-3 gap-2 w-auto max-w-max shadow text-base items-center justify-center font-medium mx-auto mb-5 text-primary-800">
+          <img src="/icons/AI.svg" alt="decoration" className="w-5 h-5" />
+          Applications
+        </h2>
+        <h2 className="font-DM font-bold text-[2.4rem] text-center mb-4">Insights and predictions made easy</h2>
+        <p className="text-base text-primary-800 mb-14 text-center">
+          Advanced business intelligence tools enhance efficiency across your entire operation. By predicting future
+          revenue and dissecting marketing effectiveness, these tools provide you with the critical insights needed for
+          informed decision-making.
+        </p>
+        <div className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3 mb-9 relative">
+          {Applications.map((application, index) => (
+            <ApplicationCard key={index} {...application} index={index} applicationsLength={Applications.length} />
+          ))}
+          <div className=" w-full bg-gradient-to-t from-primary-0 from-0% via-35% via-primary-0 to-transparent to-100% h-[263px] absolute -bottom-[86px] z-0"></div>
+        </div>
+        <Button text="Explore more applications" light style="mx-auto z-10 relative" />
       </section>
     </>
   );
