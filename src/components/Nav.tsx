@@ -41,8 +41,8 @@ export default function Nav() {
         </div>
 
         <div className="flex gap-2 flex-none items-center">
-          <Button text="Get a demo" small blue />
-          <Button text="Start your free trial" small />
+          <Button text="Get a demo" small blue style="hidden md:block" />
+          <Button text="Start your free trial" small style="hidden md:block" />
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="open or close mobile menu"

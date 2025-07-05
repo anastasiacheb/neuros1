@@ -1,4 +1,4 @@
-import { ThemeImage, Button, Slider } from '@/components';
+import { ThemeImage, Button, Slider, Heading } from '@/components';
 import React, { ReactNode } from 'react';
 
 const Logos = [
@@ -302,10 +302,9 @@ export default function Home() {
   return (
     <>
       <header className="max-w-360 m-auto text-center px-5 md:px-8 py-14 md:py-8 md:pt-28 md:pb-20 lg:px-29.5">
-        <h2 className="rounded-full border border-primary-400 flex py-2 px-3 gap-2 w-auto max-w-max shadow text-base items-center justify-center font-medium mx-auto mb-5 text-primary-800">
-          <ThemeImage srcDark="/icons/AIdark.svg" srcLight="/icons/AI.svg" alt="decoration" className="w-5 h-5" />
+        <Heading>
           Generative <span className="hidden md:block">Business</span> Intelligence for Analysts
-        </h2>
+        </Heading>
         <h1 className="font-DM font-bold text-4xl mb-5 md:text-5xl lg:px-44">
           Revolutionizing Business Decisions with AI-Powered Analytics
         </h1>
@@ -409,10 +408,7 @@ export default function Home() {
         </div>
       </section>
       <section data-aos="fade-up" className="px-5 max-w-360 m-auto pt-32 pb-28 md:px-8 lg:px-28">
-        <h2 className="rounded-full border border-primary-400 flex py-2 px-3 gap-2 w-auto max-w-max shadow text-base items-center justify-center font-medium mx-auto mb-5 text-primary-800">
-          <img src="/icons/AI.svg" alt="decoration" className="w-5 h-5" />
-          Applications
-        </h2>
+        <Heading text="Applications" />
         <h2 className="font-DM font-bold text-[2.4rem] text-center mb-4">Insights and predictions made easy</h2>
         <p className="text-base text-primary-800 mb-14 text-center">
           Advanced business intelligence tools enhance efficiency across your entire operation. By predicting future
