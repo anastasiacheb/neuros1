@@ -1,4 +1,5 @@
-import { ThemeImage, Button, Slider, Heading, FAQ, Benefits } from '@/components';
+import { ThemeImage, Button, Slider, Heading, FAQ, Benefits, ApplicationCard } from '@/components';
+import { ApplicationsData } from '@/data';
 
 const Logos = [
   { srcLight: '/icons/Logo.svg', srcDark: '/icons/Logodark.svg' },
@@ -13,112 +14,9 @@ const Logos = [
   { srcLight: '/icons/Logo-9.svg', srcDark: '/icons/Logo-9dark.svg' },
 ];
 
-const Applications = [
-  {
-    srcLight: '/icons/server_databases_network.svg',
-    srcDark: '/icons/server_databases_networkdark.svg',
-    title: 'Predictive Power',
-    description:
-      "Harness Neuros's advanced AI algorithms to anticipate market shifts, forecast trends, and make data-driven decisions that propel your business forward.",
-    industries: ['Finance', 'Retail', 'E-commerce'],
-  },
-  {
-    srcLight: '/icons/Ticket,_Group,_Circle.svg',
-    srcDark: '/icons/Ticket,_Group,_Circledark.svg',
-    title: 'Connect with Ease',
-    description:
-      "Integrate Neuros with your existing tools and platforms for a unified analytics experience. From CRMs to ERPs, we've got you covered.",
-    industries: ['Tech', 'Healthcare', 'Manufacturing'],
-  },
-  {
-    srcLight: '/icons/Target,_Space,_Object,_Select.svg',
-    srcDark: '/icons/Target,_Space,_Object,_Selectkdark.svg',
-    title: 'Visualize Your Success',
-    description:
-      "Craft bespoke dashboards that resonate with your brand's goals. With drag-and-drop functionalities, visualizing your data has never been this easy.",
-    industries: ['Marketing', 'Sales', 'Operations'],
-  },
-  {
-    srcLight: '/icons/chart_rates_checkmark.svg',
-    srcDark: '/icons/chart_rates_checkmarkdark.svg',
-    title: 'Stay Updated, Always',
-    description:
-      "With Neuros's real-time data processing, you're always in the know. Make decisions based on the latest data and stay ahead of the curve.",
-    industries: ['E-commerce', 'Logistics', 'Supply Chain'],
-  },
-  {
-    srcLight: '/icons/server_databases_synchronize.svg',
-    srcDark: '/icons/server_databases_synchronizedark.svg',
-    title: "Your Data's Safe Haven",
-    description:
-      "Rest easy knowing your data is protected with Neuros's top-tier security protocols. From encryption to access controls, we prioritize your data's safety.",
-    industries: ['Finance', 'Healthcare', 'Legal'],
-  },
-  {
-    srcLight: '/icons/credit_card_documet_sync.svg',
-    srcDark: '/icons/credit_card_documet_syncdark.svg',
-    title: 'Collaborate and Conquer',
-    description:
-      "Work together seamlessly with Neuros's collaborative features. Share insights, annotate charts, and drive collective growth.",
-    industries: ['Design', 'Development', 'Project Management'],
-  },
-  {
-    srcLight: '/icons/credit_card_cursor_click1.svg',
-    srcDark: '/icons/credit_card_cursor_click1dark.svg',
-    title: 'Simplicity Meets Power',
-    description:
-      "Neuros offers an intuitive interface that's easy to navigate, ensuring you spend less time figuring things out and more time analyzing.",
-    industries: ['All Industries'],
-  },
-  {
-    srcLight: '/icons/hand_credit_card_movement_left.svg',
-    srcDark: '/icons/hand_credit_card_movement_leftdark.svg',
-    title: 'Let AI Do the Heavy Lifting',
-    description:
-      "Receive automated insights and recommendations tailored to your business needs. Let Neuros's AI guide your strategies.",
-    industries: ['Retail', 'Marketing', 'Sales'],
-  },
-  {
-    srcLight: '/icons/server_databases-sync.svg',
-    srcDark: '/icons/server_databases-syncdark.svg',
-    title: 'Collaborate and Conquer',
-    description:
-      "Whether you're a startup or an enterprise, Neuros scales with you. Experience robust analytics solutions that adapt to your growth.",
-    industries: ['Startups', 'SMEs', 'Enterprises'],
-  },
-];
-
-interface ApplicationCardProps {
-  title: string;
-  description: string;
-  srcLight: string;
-  srcDark: string;
-  industries: string[];
-  index: number;
-  applicationsLength: number;
-}
-
-function ApplicationCard({
-  title,
-  description,
-  srcLight,
-  srcDark,
-  industries,
-  index,
-  applicationsLength,
-}: ApplicationCardProps) {
-  return (
-    <div
-      className={`border border-primary-400 rounded-xl p-8 hover:border-accent-600 hover:shadow-blue transition ${index === applicationsLength - 1 && 'md:col-span-2 lg:col-span-1'}`}>
-      <ThemeImage srcLight={srcLight} srcDark={srcDark} alt="illustration" className="mb-4 w-8 h-8" />
-      <h3 className="font-DM font-bold text-xl mb-1">{title}</h3>
-      <p className="text-base text-primary-800 h-[78px] overflow-clip mb-4">{description}</p>
-      <p className="text-sm text-accent-600">{industries.join(', ')}</p>
-    </div>
-  );
-}
-
 export default function Home() {
+  const Applications = ApplicationsData.slice(0, 9);
+
   return (
     <>
       <header className="max-w-360 m-auto text-center px-5 md:px-8 py-14 md:py-8 md:pt-28 md:pb-20 lg:px-29.5">
