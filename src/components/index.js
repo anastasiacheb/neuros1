@@ -5,3 +5,4 @@ export { default as Button } from './Button';
 export { default as Slider } from './Slider';
 export { default as Heading } from './Heading';
 export { default as FAQ } from './FAQ';
+export { default as Benefits } from './Benefits';
