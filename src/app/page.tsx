@@ -1,4 +1,4 @@
-import { ThemeImage, Button, Slider, Heading } from '@/components';
+import { ThemeImage, Button, Slider, Heading, FAQ } from '@/components';
 import React, { ReactNode } from 'react';
 
 const Logos = [
@@ -366,9 +366,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section
-        data-aos="fade-up"
-        className="py-14 px-5 max-w-360 m-auto md:pt-32 md:pb-28 md:px-14 lg:px-28 h-dvh md:h-187.5 lg:h-177.5 flex flex-col justify-between">
+      <section className="py-14 px-5 max-w-360 m-auto md:pt-32 md:pb-28 md:px-14 lg:px-28 h-dvh md:h-187.5 lg:h-177.5 flex flex-col justify-between">
         <div>
           <h2 className="font-DM font-bold text-[2.4rem] text-center mb-4">The Neuros Experience</h2>
           <p className="text-base text-primary-800 text-center mb-12 md:mb-20 max-w-200 m-auto">
@@ -378,15 +376,15 @@ export default function Home() {
         </div>
         <Slider />
       </section>
-      <section data-aos="fade-up" className="max-w-360 lg:px-28 lg:mx-auto">
+      <section className="max-w-360 lg:px-28 lg:mx-auto">
         <div className="bg-accent-600 pt-8 pb-14 px-8 my-14 md:rounded-[2rem] md:p-14 md:my-20 md:mx-8 lg:max-w-301 lg:mx-auto flex flex-col gap-10 lg:flex-row relative overflow-hidden">
           <ThemeImage
             srcDark="/images/Mask_groupdark.png"
             srcLight="/images/Mask_group.png"
             alt="play"
-            className="w-full h-auto lg:h-full lg:w-auto absolute object-contain bottom-0 left-0"
+            className="w-full h-auto lg:h-full lg:w-auto absolute object-cover bottom-0 left-0"
           />
-          <div className="flex-1">
+          <div className="flex-1 relative z-10">
             <h2 className="font-DM font-bold text-4xl mb-10 md:text-5xl text-primary-0">
               Revolutionizing Business Decisions with AI-Powered Analytics
             </h2>
@@ -400,17 +398,17 @@ export default function Home() {
               />
             </button>
           </div>
-          <div className="flex flex-col gap-5 flex-1 lg:max-w-95">
+          <div className="flex flex-col gap-5 flex-1 lg:max-w-95 relative z-10">
             {Benefits.map((benefit, index) => (
               <BenefitItem key={index} {...benefit} />
             ))}
           </div>
         </div>
       </section>
-      <section data-aos="fade-up" className="px-5 max-w-360 m-auto pt-32 pb-28 md:px-8 lg:px-28">
+      <section className="px-5 max-w-360 m-auto pt-32 pb-28 md:px-8 lg:px-28">
         <Heading text="Applications" />
         <h2 className="font-DM font-bold text-[2.4rem] text-center mb-4">Insights and predictions made easy</h2>
-        <p className="text-base text-primary-800 mb-14 text-center">
+        <p className="text-base text-primary-800 mb-14 text-center max-w-190 mx-auto">
           Advanced business intelligence tools enhance efficiency across your entire operation. By predicting future
           revenue and dissecting marketing effectiveness, these tools provide you with the critical insights needed for
           informed decision-making.
@@ -423,6 +421,7 @@ export default function Home() {
         </div>
         <Button text="Explore more applications" light style="mx-auto z-10 relative" />
       </section>
+      <FAQ />
     </>
   );
 }
